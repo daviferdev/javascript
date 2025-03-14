@@ -1,9 +1,23 @@
-function CreateCaculator() {
+function CreateCalculator() {
   this.display = document.querySelector(".display");
 
   this.init = () => {
     this.clickButton();
     this.keyPressEnter();
+  };
+
+  this.makeAccount = () => {
+    try {
+      let account = this.display.value;
+
+      account = eval(account);
+
+      this.display.value = account;
+    } catch (err) {
+      alert("Conta Inválida!");
+      this.display.value = "";
+      return;
+    }
   };
 
   this.keyPressEnter = () => {
@@ -12,13 +26,6 @@ function CreateCaculator() {
         this.makeAccount();
       }
     });
-  };
-
-  this.makeAccount = () => {
-    let account = this.display.value;
-    account = eval(account);
-
-    this.display.value = account;
   };
 
   this.clickButton = () => {
@@ -58,5 +65,5 @@ function CreateCaculator() {
   };
 }
 
-const calculator = new CreateCaculator();
+const calculator = new CreateCalculator();
 calculator.init();

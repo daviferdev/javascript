@@ -1,3 +1,4 @@
+// Immediately Invoked Function Expression
 ((name, lastName) => {
 
   function createName() {

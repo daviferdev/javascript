@@ -7,39 +7,12 @@ function createCalculator() {
       this.keyPressEnter();
     },
 
-    keyPressEnter(){
+    keyPressEnter() {
       this.display.addEventListener("keyup", (e) => {
-        if(e.keyCode === 13) {
+        if (e.keyCode === 13) {
           this.makeAccount();
         }
-      })
-    },
-
-    makeAccount(){
-      let account = this.display.value;
-
-      try {
-        account = eval(account);
-
-        if(!account) {
-          alert("Conta Inválida!");
-          return;
-        }
-
-        this.display.value = account;
-      } catch(e) {
-        alert("Conta Inválida!");
-        this.display.value = "";
-        return;
-      }
-    },
-
-    clearDisplay() {
-      this.display.value = "";
-    },
-
-    deleteOne() {
-      this.display.value = this.display.value.slice(0, -1);
+      });
     },
 
     clickButton() {
@@ -47,7 +20,7 @@ function createCalculator() {
         const el = e.target;
 
         if (el.classList.contains("btn-num")) {
-          this.btnForDisplay(el.innerText);
+          this.insertNumDisplay(el.innerText);
         }
 
         if (el.classList.contains("btn-clear")) {
@@ -55,7 +28,7 @@ function createCalculator() {
         }
 
         if (el.classList.contains("btn-del")) {
-          this.deleteOne();
+          this.clearUniqueElement();
         }
 
         if (el.classList.contains("btn-eq")) {
@@ -66,8 +39,34 @@ function createCalculator() {
       });
     },
 
-    btnForDisplay(value) {
-      this.display.value += value;
+    makeAccount() {
+      try {
+        let account = this.display.value;
+        account = eval(account);
+
+        if (!account) {
+          alert("Conta Inválida!");
+          return;
+        }
+
+        this.display.value = account;
+      } catch (error) {
+        alert("Conta Inválida!");
+        this.display.value = "";
+        return;
+      }
+    },
+
+    insertNumDisplay(element) {
+      this.display.value += element;
+    },
+
+    clearDisplay() {
+      this.display.value = "";
+    },
+
+    clearUniqueElement() {
+      this.display.value = this.display.value.slice(0, -1);
     },
   };
 }

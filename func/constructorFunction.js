@@ -2,10 +2,11 @@ function Person(name, lastName) {
   this.name = name;
   this.lastName = lastName;
 
-  this.method = () => {
-    console.log(this.name + ": Sou um método")
-  };
+  this.sayName = () => {
+    console.log(this);
+    return `${this.name} ${this.lastName}`;
+  }
 }
 
 const person1 = new Person("Davi", "Fernandes");
-person1.method();
+console.log(person1.sayName());

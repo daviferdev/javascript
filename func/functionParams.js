@@ -1,55 +1,60 @@
 // Arguments, sustesta todos os argumentos enviados
 function showArguments() {
-  let total = 0;
+  let count = 0;
 
-  for (let argument of arguments) {
-    total += argument;
+  for (let num of arguments) {
+    count += num;
   }
 
-  console.log(total);
+  console.log(count);
 }
 
-showArguments(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+// showArguments(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
 // Definindo valor padrão
-function sum(x = 2, y = 2, c = 4) {
-  console.log(x + y + c);
+function sum(num1 = 2, num2 = 2, num3 = 2) {
+  console.log(num1 + num2 + num3);
 }
 
-sum(4, undefined, 10);
+// sum(10, undefined, 5);
 
 // Atribuição via desestruturação com objetos
 function showPerson({ name, lastName, age }) {
   console.log(name, lastName, age);
 }
 
-const obj = {
+const person = {
   name: "Davi",
   lastName: "Fernandes",
   age: 24,
 };
 
-showPerson(obj);
+// showPerson(person);
 
 // Atribuição via desestruturação com array
 function showFruits([fruit1, fruit2, fruit3]) {
-  console.log(fruit1, fruit2, fruit3);
+  console.log(fruit1, fruit2, fruit3)
 }
 
-const fruits = ["Maçã", "Pêra", "Uva"];
-showFruits(fruits);
+const fruits = [
+  "Maçã",
+  "Uva",
+  "Pêra",
+]
+
+// showFruits(fruits);
 
 // Utilizando o operador ...rest
-const account = (operator, acumulator, ...numbers) => {
-  for (let num of numbers) {
+const account = (operator, acumulator, ...nums) => {
+  for (let num of nums) {
     if (operator === "+") acumulator += num;
-    if (operator === "-") acumulator -= num;
+    if (operator === "-") acumulator -+ num;
     if (operator === "*") acumulator *= num;
     if (operator === "/") acumulator /= num;
   }
 
   return acumulator;
-};
+}
 
-const result = account("*", 1, 10, 20, 30);
+const result = account("+", 1, 10, 20, 30);
 console.log(result);

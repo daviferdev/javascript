@@ -1,26 +1,19 @@
-// function declaration
-function sayName(name) {
-  console.log("Olá:", name);
+// Declaration function
+greeting1();
+
+function greeting1() {
+  console.log("Hello World 1");
 }
 
-// function expression
-
-// fisrt-class object
-const showMsg = function (func) {
-  func;
+// Function expression
+const greeting2 = function () {
+  console.log("Hello World 2");
 };
 
-showMsg(sayName("Davi Fernandes"));
+greeting2();
 
-// arrow function
-const sum = (num1, num2) => num1 + num2;
-console.log(sum(5, 4));
+// Arrows functions
+const greeting3 = () => console.log("Hello World 3");
 
-// function in object
-const obj = {
-  speak() {
-    console.log("I speaking english");
-  },
-};
+greeting3();
 
-obj.speak();

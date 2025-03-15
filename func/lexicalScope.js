@@ -6,6 +6,7 @@ function sayName() {
 }
 
 function useSayName() {
+  const name = "Pedro";
   sayName();
 }
 

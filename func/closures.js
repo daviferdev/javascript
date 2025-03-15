@@ -4,8 +4,5 @@ function returnFn(name) {
   };
 }
 
-const fn1 = returnFn("Davi");
-const fn2 = returnFn("Robson");
-
-console.log(fn1());
-console.log(fn2());
+const result = returnFn("Roberval");
+console.log(result());

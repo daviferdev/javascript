@@ -1,27 +1,26 @@
-const randomTemp = (min = 1000, max = 3000) => {
-  const num = Math.random() * (max - min) + min;
-  return Math.floor(num);
+const randomInterval = (min = 1000, max = 5000) => {
+  return Math.floor(Math.random() * (max - min) + min);
 };
 
 function f1(callback) {
   setTimeout(() => {
-    console.log("f1");
+    console.log("F1");
     if (callback) callback();
-  }, randomTemp());
+  }, randomInterval());
 }
 
 function f2(callback) {
   setTimeout(() => {
-    console.log("f2");
+    console.log("F2");
     if (callback) callback();
-  }, randomTemp());
+  }, randomInterval());
 }
 
 function f3(callback) {
   setTimeout(() => {
-    console.log("f3");
+    console.log("F3");
     if (callback) callback();
-  }, randomTemp());
+  }, randomInterval());
 }
 
 f1(f1Callback);
@@ -31,21 +30,20 @@ function f1Callback() {
 }
 
 function f2Callback() {
-  f3(f3Callback);
+  f3(f3callback);
 }
 
-function f3Callback() {
+function f3callback() {
   console.log("Hello World!");
 }
 
-
-function greeting(name) {
-  console.log("Olá " + name);
+function greating(name) {
+  console.log(`Hello: ${name}`);
 }
 
-function processUserInput(callback) {
-  let name = "Davi Fernandes";
-  callback(name);
+function getUserData(callbackFn) {
+  const userName = "Davi Fernandes";
+  callbackFn(userName);
 }
 
-processUserInput(greeting);
+getUserData(greating);

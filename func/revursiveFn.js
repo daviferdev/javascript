@@ -1,8 +1,7 @@
 function count(max) {
-  console.log("p",max);
+  console.log(max);
   if (max >= 10) return;
   max++;
-  console.log("s", max);
   count(max);
 }
 

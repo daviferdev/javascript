@@ -1,6 +1,6 @@
 //                         0       1       2         3
 const fruits = new Array("Maçã", "Uva", "Pêra", "Melancia");
-// delete fruits[3];
+delete fruits[3];
 const fruits2 = [...fruits];
 fruits2[2] = "Abacate";
 console.log(fruits);

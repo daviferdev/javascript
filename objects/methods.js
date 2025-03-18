@@ -10,7 +10,6 @@
   Object.defineProperty
 */
 
-
 // Object.assing() Object.freeze()
 const product = { name: "Livro", price: 25.5 };
 Object.freeze(product);

@@ -31,7 +31,7 @@ function Mug(name, price, color, storage) {
 
   Product.call(this, name, price);
   this.color = color;
-
+  console.log("Esse é o this", this);
   Object.defineProperty(this, "storage", {
     enumerable: true,
     configurable: false,

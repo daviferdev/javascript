@@ -29,3 +29,14 @@ function multiplicator(a, b) {
 
 const double = multiplicator.bind(null, 2);
 console.log(double(5));
+
+const car = {
+  brand: "Fiat",
+  model: "Uno",
+  displayCar: function() {
+    console.log(`Brand: ${this.brand}, Model: ${this.model}`)
+  }
+}
+
+const displayCaptur = car.displayCar.bind(car);
+displayCaptur();

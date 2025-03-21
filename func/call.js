@@ -1,28 +1,29 @@
-const obj1 = {
-  example1: "example1",
-  showThis: function () {
+const obj = {
+  example: "example1",
+  showThis() {
     console.log(this);
   },
 };
 
-obj1.showThis();
+obj.showThis();
 
-const obj2 = { example2: "example2" };
+const obj2 = {
+  example: "example2",
+};
 
-obj1.showThis.call(obj2);
+obj.showThis.call(obj2);
 
 function greeting() {
-  console.log(this);
-  console.log(`Olá, ${this.name}! Bem-vindo(a) ao ${this.local}`);
+  console.log(`Olá ${this.name} Bem-vindo(a) ao ${this.local}`);
 }
 
 const person = {
-  name: "Ana",
+  name: "Davi",
   local: "restaurante",
-};
+}
 
 const otherPerson = {
-  name: "Davi",
+  name: "Larissa",
   local: "hotel",
 };
 
@@ -32,21 +33,15 @@ greeting.call(otherPerson);
 const boy = {
   name: "Davi",
   talk() {
-    console.log("Esse é o this", this);
-    console.log(`My name is ${this.name} `);
-  },
-};
+    console.log(`My name is ${this.name}`);
+  }
+}
 
 boy.talk();
 
 const girl = {
-  name: "Larissa",
-}
+  name: "Roberta",
+};
 
 boy.talk.call(girl);
-
-
-
-
-
 

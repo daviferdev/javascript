@@ -1,10 +1,10 @@
 const nums = [5, 80, 50, 30, 15, 70, 50, 30, 25, 22, 2, 1, 3, 4];
 
-const numsFilter = nums.filter((num) => num > 10);
-console.log(numsFilter);
+const numFilter = nums.filter((num) => num > 10);
+console.log(numFilter);
 
-// Retorne as pessoas que tem o nome com 5 letras ou mais
-// Retorne as pessoas com mais de 50 anos
+// Retorne as pessoas que tem o nome com mais de 5 letras
+// Retorne as pessoas com mais de 30 anos
 // Retorne as pessoas cujo nome termina com a
 
 const persons = [
@@ -16,11 +16,11 @@ const persons = [
   { name: "Lúcia", age: 48},
 ]
 
-const bigName = persons.filter((person) => person.name.length > 5);
-const ageAdvanced = persons.filter((person) => person.age > 30);
-const nameEndsWithA = persons.filter((person) => person.name.slice(-1) === "a");
+const names = persons.filter((person) => person.name.length > 5);
+const personAge = persons.filter((person) => person.age > 30);
+const personLastName = persons.filter((person) => person.name.slice(-1) === "a");
 
-console.log(bigName);
-console.log(ageAdvanced);
-console.log(nameEndsWithA);
+console.log(names);
+console.log(personAge);
+console.log(personLastName);
 

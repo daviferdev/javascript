@@ -1,7 +1,7 @@
 const nums = [2, 4, 3, 9, 7, 5, 1, 8, 6];
-const doubleNumbers = nums.map((num) => num * 2);
+const doubleNums = nums.map((num) => num * 2);
 
-console.log(doubleNumbers);
+console.log(doubleNums);
 
 // Para cada elemento:
 // Retorne apenas uma string com o nome da pessoa
@@ -18,15 +18,9 @@ const persons = [
 ];
 
 const personName = persons.map((person) => person.name);
-const removeName = persons.map((person) => {
-  return { age: person.age };
-});
-
-const addKey = persons.map((person) => {
-  return { ...person, id: Math.random() * 10 };
-});
-
 console.log(personName);
-console.log(removeName);
-console.log(addKey);
-console.log(persons);
+const personAge = persons.map((person) => ({ age: person.age }));
+console.log(personAge);
+const personKey = persons.map((person) => ({ ...person, key: Math.random() * 10}));
+console.log(personKey);
+

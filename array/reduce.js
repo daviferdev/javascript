@@ -18,24 +18,25 @@ const numsPar = nums.reduce((acc, value) => {
 console.log(numsPar);
 
 const doubleNums = nums.reduce((acc, value) => {
-  const valueNums = value * 2;
-  acc.push(valueNums);
+  const numDouble = value * 2;
+  acc.push(numDouble);
   return acc;
 }, []);
 
-console.log(doubleNums);
+console.log(doubleNums)
 
 // Retorne a pessoa mais velha
 const persons = [
   { name: "Davi", age: 24 },
   { name: "Robson", age: 32 },
   { name: "Felipe", age: 25 },
-  { name: "Juliana", age: 27 },
+  { name: "Juliana", age: 33 },
   { name: "Laura", age: 21 },
   { name: "Lúcia", age: 48 },
 ];
 
 const olderPerson = persons.reduce((acc, value) => {
+  console.log(acc.age, value.age);
   if (acc.age > value.age) return acc;
   return value;
 });

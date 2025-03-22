@@ -12,3 +12,6 @@ for (const pessoa of pessoas) {
 }
 
 console.log(novasPessoas);
+for (const [indetifier, { id, nome }] of novasPessoas) {
+  console.log(indetifier, id, nome);
+}

@@ -1,21 +1,23 @@
-//                         0       1       2         3
-const fruits = new Array("Maçã", "Uva", "Pêra", "Melancia");
-delete fruits[3];
+//                         0       1      2         3 
+const fruits = new Array("Maçã", "Uva", "Pêra", "Laranja");
+
 const fruits2 = [...fruits];
-fruits2[2] = "Abacate";
+fruits2[fruits2.length] = "Melancia";
+
+const firstElement = fruits.shift();
+console.log(firstElement);
+
+const lastElement = fruits.pop();
+console.log(lastElement);
+
+fruits.unshift("Maçã");
+fruits.push("Laranja");
+
 console.log(fruits);
 console.log(fruits2);
 
-const arraySlice = fruits.slice(0, -1);
-console.log("Array fatiado", arraySlice);
-
-console.log(fruits[fruits.length - 1]);
-
-const firstItem = fruits.shift();
-const lastItem = fruits.pop();
-
-console.log(firstItem, lastItem);
-console.log(fruits);
+const arrSlice = fruits.slice(0, -1);
+console.log("resultado: ", arrSlice);
 
 const nameComplete = "Davi Fernandes de Lima";
 const arrName = nameComplete.split(" ");

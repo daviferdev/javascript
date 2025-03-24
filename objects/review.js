@@ -1,4 +1,3 @@
-// Object Constructor
 const person = new Object();
 person.name = "Davi";
 person.lastName = "Fernandes";
@@ -6,16 +5,15 @@ person.age = 25;
 person.sayName = function () {
   console.log(`${this.name} ${this.lastName}`);
 };
-person.verifyDateOfNasc  = function() {
-  const date = new Date;
-  const yearLatest = date.getFullYear();
 
-  return yearLatest - this.age;
+person.verifyYearNasc = function () {
+  const date = new Date();
+  const year = date.getFullYear();
+  return year - this.age;
 };
 
-console.log(person["name"], person.lastName);
 person.sayName();
-console.log(person.verifyDateOfNasc());
+console.log(person.verifyYearNasc());
 
 // Factory Function
 function createPerson(name, lastName) {
@@ -25,16 +23,14 @@ function createPerson(name, lastName) {
   }
 }
 
-const person1 = createPerson("Robson", "Lima");
+const person1 = createPerson("Davi", "Fernandes");
 console.log(person1);
 
-// Constructor function
-function Person(name, lastName)  {
-  this.name = name;
+// // Constructor function
+function Person(name, lastName) {
+  this.name = name,
   this.lastName = lastName;
-
-  Object.freeze(this);
 }
 
-const person2 = new Person("Laura", "Silva");
+const person2 = new Person("Robson", "Lima");
 console.log(person2);

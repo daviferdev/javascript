@@ -1,28 +1,41 @@
 function Product(name, price, storage) {
-  this.name = name;
-  this.price = price;
-  let privateStorage = storage;
+  let infoStorage = storage;
+
+  Object.defineProperty(this, "name", {
+    enumerable: true,
+    writable: true,
+    configurable: false,
+    value: name,
+  });
+
+  Object.defineProperty(this, "price", {
+    enumerable: true,
+    writable: true,
+    configurable: false,
+    value: price,
+  });
 
   Object.defineProperty(this, "storage", {
     enumerable: true,
+    configurable: false,
+
     get: function () {
-      return privateStorage;
+      return infoStorage;
     },
+
     set: function (value) {
       if (typeof value !== "number") {
         console.log("Bad Value!");
         return;
       }
 
-      privateStorage = value;
+      infoStorage = value;
     },
-    configurable: false,
   });
 }
 
-const product1 = new Product("Camisa", 180, 50);
-product1.storage = 500;
-console.log(product1.storage);
+const product1 = new Product("Camiseta", 20, 500);
+console.log(product1.name);
 
 function car(brand) {
   return {
@@ -31,10 +44,9 @@ function car(brand) {
     },
     set brand(value) {
       brand = value;
-    }
-  }
+    },
+  };
 }
 
 const brandCar = car("Fiat");
-brandCar.brand = "Honda";
 console.log(brandCar.brand);

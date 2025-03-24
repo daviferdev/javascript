@@ -5,6 +5,7 @@ const obj = {
   },
 };
 
+console.log(obj);
 obj.showThis();
 
 const obj2 = {
@@ -13,35 +14,33 @@ const obj2 = {
 
 obj.showThis.call(obj2);
 
-function greeting() {
-  console.log(`Olá ${this.name} Bem-vindo(a) ao ${this.local}`);
+function gretting(check) {
+  console.log(`Olá, ${this.name} Bem-vindo(a) ao ${this.local} ${check}`);
 }
 
 const person = {
   name: "Davi",
-  local: "restaurante",
+  local: "Restaurante",
 }
 
 const otherPerson = {
   name: "Larissa",
-  local: "hotel",
-};
+  local: "Hotel",
+}
 
-greeting.call(person);
-greeting.call(otherPerson);
+gretting.call(person, "Aprovado");
+gretting.apply(otherPerson, ["Reprovada"]);
 
 const boy = {
   name: "Davi",
-  talk() {
+  gretting() {
     console.log(`My name is ${this.name}`);
   }
 }
 
-boy.talk();
-
 const girl = {
-  name: "Roberta",
-};
+  name: "Maria",
+}
 
-boy.talk.call(girl);
-
+boy.gretting();
+boy.gretting.call(girl);

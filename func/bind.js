@@ -7,12 +7,12 @@
 // };
 
 // const nameResult = name.getName;
-// console.log(nameResult());
+// console.log(nameResult);
 
-// const nameContext = nameResult.bind(name);
-// console.log(nameContext());
+// const nameBind = nameResult.bind(name);
+// console.log(nameBind());
 
-function getName() {
+function getName(){
   return this.name;
 }
 
@@ -36,5 +36,5 @@ const car = {
   }
 }
 
-const carResult = car.displayCar.bind(car);
-console.log(carResult());
+const carResult = car.displayCar.bind(car)();
+console.log(carResult);

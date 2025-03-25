@@ -6,12 +6,13 @@ const pessoas = [
 
 const novasPessoas = new Map();
 
-for (const pessoa of pessoas) {
+for (let pessoa of pessoas) {
   const { id } = pessoa;
   novasPessoas.set(id, { ...pessoa });
 }
 
 console.log(novasPessoas);
-for (const [indetifier, { id, nome }] of novasPessoas) {
-  console.log(indetifier, id, nome);
+
+for (let [indentifier, {id, nome}] of novasPessoas) {
+  console.log(indentifier, id, nome);
 }

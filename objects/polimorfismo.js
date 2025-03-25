@@ -6,7 +6,7 @@ function Conta(agencia, conta, saldo) {
 
 Conta.prototype.sacar = function (valor) {
   if (this.saldo < valor) {
-    console.log(`Saldo insuficiente seu saldo: R$${this.saldo.toFixed(2)}`);
+    console.log(`Saldo insuficiente Seu saldo: R$${this.saldo.toFixed(2)}`);
     return;
   }
 
@@ -15,22 +15,16 @@ Conta.prototype.sacar = function (valor) {
 
 Conta.prototype.depositar = function (valor) {
   this.saldo += valor;
-  console.log(`Seu novo saldo é de R$${this.saldo.toFixed(2)}`);
 };
 
 Conta.prototype.verSaldo = function () {
-  console.log(
-    `Ag/c: ${this.agencia}/${this.conta} Saldo: R$${this.saldo.toFixed(2)}`
-  );
+  console.log(`Seu saldo é de R$${this.saldo.toFixed(2)}`);
 };
-
-const conta = new Conta(11, 25, 500);
-console.log(conta);
-conta.depositar(50);
-conta.sacar(600);
+const conta = new Conta("00.11.22", 55, 500);
+conta.verSaldo();
 
 console.log("");
-console.log("###=========###========###=======###");
+console.log("=========##=========##========##");
 console.log("");
 
 function ContaCorrente(agencia, conta, saldo, limite) {
@@ -43,7 +37,7 @@ ContaCorrente.prototype.constructor = ContaCorrente;
 
 ContaCorrente.prototype.sacar = function (valor) {
   if (valor > (this.saldo + this.limite)) {
-    console.log(`Saldo insuficiente seu saldo: R$${this.saldo.toFixed(2)}`);
+    console.log(`Saldo insuficiente Seu saldo: R$${this.saldo.toFixed(2)}`);
     return;
   }
 
@@ -51,13 +45,11 @@ ContaCorrente.prototype.sacar = function (valor) {
   this.verSaldo();
 };
 
-const contaCorrente = new ContaCorrente(50, 25, 0, 1500);
-contaCorrente.depositar(15);
-contaCorrente.sacar(900);
-console.log(contaCorrente);
+const contaCorrente = new ContaCorrente("11.2/05", 10, 800, 2000);
+contaCorrente.sacar(2700);
 
 console.log("");
-console.log("###=========###========###=======###");
+console.log("=========##=========##========##");
 console.log("");
 
 function ContaPoupanca(agencia, conta, saldo) {
@@ -67,7 +59,6 @@ function ContaPoupanca(agencia, conta, saldo) {
 ContaPoupanca.prototype = Object.create(Conta.prototype);
 ContaPoupanca.prototype.constructor = ContaPoupanca;
 
-const contaPoupanca = new ContaPoupanca(70, 55, 10, 800);
-contaPoupanca.depositar(15);
-contaPoupanca.sacar(900);
-console.log(contaPoupanca);
+const contaPoupanca = new ContaPoupanca("15/00.11-9", 10, 600);
+contaPoupanca.sacar(700);
+

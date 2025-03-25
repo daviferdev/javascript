@@ -11,36 +11,35 @@ Product.prototype.discount = function (value) {
   this.price -= value;
 };
 
-function T_Shirt(name, price, color) {
+function Shirt(name, price, color) {
   Product.call(this, name, price);
   this.color = color;
 }
 
-T_Shirt.prototype = Object.create(Product.prototype);
-T_Shirt.prototype.constructor = T_Shirt;
+Shirt.prototype = Object.create(Product.prototype);
+Shirt.prototype.constructor = Shirt;
 
-T_Shirt.prototype.increase = function (percentage) {
-  this.price = this.price + this.price * (percentage / 100);
+Shirt.prototype.discount = function (percentage) {
+  this.price = this.price - this.price * (percentage / 100);
 };
 
-const shirt = new T_Shirt("Polo", 55, "Preta");
-shirt.increase(100);
+const shirt = new Shirt("Polo", 50, "Black");
+shirt.discount(5);
 console.log(shirt);
 
 function Mug(name, price, color, storage) {
-
   Product.call(this, name, price);
   this.color = color;
-  console.log("Esse é o this", this);
+
   Object.defineProperty(this, "storage", {
     enumerable: true,
     configurable: false,
     get: function () {
       return storage;
     },
-
     set: function (value) {
       if (typeof value !== "number") return;
+
       storage = value;
     },
   });
@@ -49,11 +48,11 @@ function Mug(name, price, color, storage) {
 Mug.prototype = Object.create(Product.prototype);
 Mug.prototype.constructor = Mug;
 
-Mug.prototype.discount = function (percentage) {
-  this.price = this.price - this.price * (percentage / 100);
+Mug.prototype.increase = function (percentage) {
+  this.price = this.price + this.price * (percentage / 100);
 };
 
-const mug = new Mug("Porcelana", 30, "Creme", 100);
-mug.discount(5);
-mug.storage = 500;
-console.log(mug.storage);
+const mug = new Mug("Caneca", 35, "Creme", 500);
+mug.storage = 700;
+console.log(mug);
+console.log(mug.storage)

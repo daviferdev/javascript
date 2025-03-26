@@ -2,6 +2,10 @@ function validIsCPF(cpf) {
   const cleanCPF = cpf.replace(/\D+/g, "");
   const formatCPF = transformCPF(cleanCPF);
 
+  if (cleanCPF === "undefined") return false;
+  if (cleanCPF.length !== 11) return false;
+  if (isSquence(cleanCPF)) return false;
+
   const primaryDigit = verifyDigit(formatCPF, formatCPF.length);
   formatCPF.push(primaryDigit);
   const secondaryDigit = verifyDigit(formatCPF, formatCPF.length);
@@ -10,6 +14,10 @@ function validIsCPF(cpf) {
   const cpfChecked = formatCPF.join("");
 
   return cleanCPF === cpfChecked;
+}
+
+function isSquence(cleanCPF) {
+  return cleanCPF[0].repeat(cleanCPF.length);
 }
 
 function transformCPF(cleanCPF) {
@@ -33,7 +41,7 @@ function verifyDigit(cpf, length) {
   return digit < 2 ? 0 : 11 - digit;
 }
 
-const cpfIsValid = validIsCPF("709.576.641-09");
+const cpfIsValid = validIsCPF("000.000.000-11");
 
 if (cpfIsValid) {
   console.log("CPF Válido!");

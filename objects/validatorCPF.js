@@ -1,4 +1,6 @@
 function validIsCPF(cpf) {
+  if (typeof cpf === "number") return;
+
   const cleanCPF = cpf.replace(/\D+/g, "");
   const formatCPF = transformCPF(cleanCPF);
 
@@ -41,7 +43,7 @@ function verifyDigit(cpf, length) {
   return digit < 2 ? 0 : 11 - digit;
 }
 
-const cpfIsValid = validIsCPF("000.000.000-11");
+const cpfIsValid = validIsCPF();
 
 if (cpfIsValid) {
   console.log("CPF Válido!");

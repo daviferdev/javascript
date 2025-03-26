@@ -16,3 +16,4 @@ console.log(novasPessoas);
 for (let [indentifier, {id, nome}] of novasPessoas) {
   console.log(indentifier, id, nome);
 }
+

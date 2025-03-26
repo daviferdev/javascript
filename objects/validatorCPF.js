@@ -1,12 +1,12 @@
 function validIsCPF(cpf) {
-  if (typeof cpf === "number") return;
+  if (typeof cpf === "number" || !cpf) return;
 
   const cleanCPF = cpf.replace(/\D+/g, "");
   const formatCPF = transformCPF(cleanCPF);
 
   if (cleanCPF === "undefined") return false;
   if (cleanCPF.length !== 11) return false;
-  if (isSquence(cleanCPF)) return false;
+  if (isSquence(cleanCPF) === cleanCPF) return false;
 
   const primaryDigit = verifyDigit(formatCPF, formatCPF.length);
   formatCPF.push(primaryDigit);

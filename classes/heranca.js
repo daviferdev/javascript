@@ -30,7 +30,7 @@ class Tablet extends DispositivosEletronicos {
   }
 }
 
-const tablet = new Tablet("Galaxy", "Preto")
+const tablet = new Tablet("Galaxy", "Preto");
 tablet.ligar();
 console.log(tablet);
 

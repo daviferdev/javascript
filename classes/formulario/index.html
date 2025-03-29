@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Formulário</title>
+  </head>
+
+  <body>
+    <h1>Formulário de cadastro</h1>
+    <form class="formulario">
+      <label>
+        <span>Nome:</span>
+        <input type="text" class="nome validar" placeholder="Digite seu nome" />
+      </label>
+      <label>
+        <span>Sobrenome:</span>
+        <input
+          type="text"
+          class="sobrenome validar"
+          placeholder="Digite seu sobrenome"
+        />
+      </label>
+      <label>
+        <span>CPF:</span>
+        <input type="text" class="cpf validar" placeholder="000.000.000-00" />
+      </label>
+      <label>
+        <span>Usuário:</span>
+        <input
+          type="text"
+          class="usuario validar"
+          placeholder="Digite seu Usuário"
+        />
+      </label>
+      <label>
+        <span>Senha:</span>
+        <input
+          type="password"
+          class="senha validar"
+          placeholder="Informe sua senha"
+        />
+      </label>
+      <label>
+        <span>Repetir senha:</span>
+        <input
+          type="password"
+          class="repetir-senha validar"
+          placeholder="Repetir senha"
+        />
+      </label>
+
+      <button>Enviar</button>
+    </form>
+
+    <script src="./js/validaCPF.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
